@@ -10,6 +10,6 @@ Development Goals
 From a technical standpoint, Curse’m served as my reintroduction to using Express routers and working with user data to dynamically render webpages through EJS components. I built this app from scratch to enhance my understanding of backend routing and templating while revisiting CSS to create a responsive, visually appealing user interface.
 
 Features
-User-Friendly Input: Easily submit a name and curse details.
-Dynamic Rendering: Enjoy a fun, interactive user experience with real-time updates.
-Clean, Responsive Design: A simple yet elegant UI that works across devices.
+* User-Friendly Input: Easily submit a name and curse details.
+* Dynamic Rendering: Enjoy a fun, interactive user experience with real-time updates.
+* Clean, Responsive Design: A simple yet elegant UI that works across devices.
