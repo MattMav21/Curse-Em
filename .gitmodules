@@ -1,0 +1,3 @@
+[submodule "submodules/Curse-m"]
+	path = submodules/Curse-m
+	url = https://github.com/MattMav21/Curse-Em.git
