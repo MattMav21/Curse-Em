@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Gothic+A1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Gothic+A1&family=Pirata+One&display=swap" rel="stylesheet">
+    <title>💀 CURSE'M 💀</title>
+</head>
+<body>
+    <%- include("header.ejs") %>
+    <div class="content-container">
+        <% if (locals.hitList) { %>
+            <div id="victim-list-container">
+            <h2>RIP</h2>
+            <% hitList.forEach(victim => { %>
+                    <ul id="victim-list">
+                        <div>
+                            <li id="listed-name">☠️ <%- victim.cursedName %> ☠️</li> 
+                            <li><%- victim.cursedReason %> </li>
+                        </div>
+                    </ul>
+                    <br />
+                <% }); %>
+            </div>
+        <% } else {} %>
+
+
+        <% if (locals.cursedName) { %>
+            <h1 id="cursed-text"> 🔥 <em><%- cursedName %> has been</em> CURSED! 🔥 </h1>
+        <% }  else { %>
+            <h1 class="invitation">😈 Curse your enemy, and explain why! 😈 </h1>
+        <% } %>
+
+
+        <!-- Form -->
+            <!-- Post Title -->
+            <!-- Post Content -->
+        <div id="post-input">
+            <form action="/submit" method="POST">
+                <div id="cursed-name" class="label">
+                    <label for="cursed-name">Recipient</label><br>
+                    <input type="text" id="cursed-name" name="cursed-name" placeholder="Enter the cursed one's name..." required/>
+                </div>
+                <br />
+                <div id="cursed-reason" class="label">
+                    <label for="cursed-reason">Reason</label><br>
+                    <textarea type="text" id="cursed-reason" name="cursed-reason" placeholder="Why shall they be cursed? (e.g. 'They forgot it was my birthday!' 😡)" required></textarea>
+                </div>
+                <div>
+                    <button type="submit" id="submit-button" >CURSE!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include("footer.ejs") %>
+    <script src="script.js"></script>
+</body>
+</html>
