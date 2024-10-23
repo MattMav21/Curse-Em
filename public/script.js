@@ -14,15 +14,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(error)
         }
 
-
-    
-
-
-    // if (contentContainer.style.backgroundColor === "black") {
-    //     setTimeout(() => {
-    //         let contentContainer = document.getElementsByClassName("content-container")[0]
-            
-    //       }, "1000")
-    // }
-
 });

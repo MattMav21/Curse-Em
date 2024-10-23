@@ -4,9 +4,6 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
-// const audio = new Audio("sounds/evil-laugh-89423.mp3")
-
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -14,8 +11,6 @@ const PORT = process.env.PORT || 3000;  // Use the PORT environment variable for
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
-let purity = true;
 
 let hitList = [];
 
@@ -36,7 +31,6 @@ app.get("/", (req, res) => {
 })
 
 app.post("/submit", (req, res) => {
-    purity = false;
     let newData = {}
     newData.cursedName = req.body["cursed-name"];
     newData.cursedReason = req.body["cursed-reason"];
@@ -47,12 +41,10 @@ app.post("/submit", (req, res) => {
     data.cursedReason = req.body["cursed-reason"];
 
     
-    console.log(purity)
     res.render("index.ejs", data);
 });
 
 app.get("/submit", (req, res) => {
-    purity = true;
     res.redirect("/")
 })
 
